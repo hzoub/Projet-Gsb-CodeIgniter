@@ -21,34 +21,31 @@
 	<div id="formulaire">
 
 		<h1>Identification utilisateur</h1>
-	
-<form>
-<fieldset>
+			
+			<form>
+				<fieldset>
+					
+					<?php 	
+							echo form_open("ADMINISTRER_C");
+					?>
+					
+					<label for="name">Login* :</label>
+					<?php echo form_input("IDENTIFIANT");?>
+					
+					<label for="email">Mot de passe* :</label>
+					<?php 	echo form_password("PASSWORD");
+					
+							echo form_submit("LOGIN", "Valider");
+							echo form_submit("LOGIN", "Annuler");
+				echo form_close('</fieldset>');
+			echo form_close('</form>');
+	echo form_close('</div>');
+					?>
 
-<?php 	
-		echo form_open("ADMINISTRER_C");
-?>
+				<b>* Champs obligatoires</b>
+			</div>
+			
+		</div>
 
-<label for="name">Login* :</label>
-<?php echo form_input("IDENTIFIANT");?>
-<label for="email">Mot de passe* :</label>
-<?php 	echo form_password("PASSWORD");
-		echo form_submit("LOGIN", "Valider");
-		echo form_submit("LOGIN", "Annuler");
-		echo form_close('</fieldset>');
-		echo form_close('</form>');
-		echo form_close('</div>');
-?>
-
-
-
-
-<b>* Champs obligatoires</b>
-	</div>
-
-
-
-</div>
-
-</body>
+	</body>
 </html>
