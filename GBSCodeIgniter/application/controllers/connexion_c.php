@@ -18,18 +18,17 @@ class Connexion_c extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function __construct(){ 	
-		parent::__construct();	// Appel obligatoire au constructeur parent
+		parent::__construct();	
+		// Appel obligatoire au constructeur parent
 		//Chargement : base de donnÃ©e, model, helper
 	}
 	public function index()
 	{
-		$this->form_validation->set_rules('login','login','trim|required|xss_clean');
-		$this->form_validation->set_rules('mdp','mot de passe','trim|required|xss_clean');
-		
+		/*Vérification des champs s'ils sont valide. xss_clean -> pour eviter les injéctions sql*/
+		 $this->form_validation->set_rules('pseudo','pseudo','trim|required|xss_clean');
+    	 $this->form_validation->set_rules('pass','mot de passe','trim|required|xss_clean');
+ 
 		$this->load->view('accueil_v');	
 	}
 	
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */

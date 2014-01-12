@@ -20,11 +20,11 @@
 				<div id="formulaire">
 							
 					<h1>Identification utilisateur</h1>
-										
+							
 					<form>
 						<fieldset>
 																	
-							<?php echo form_open("connexion_c");?>		
+							<?php echo form_open('connexion_c');?>		
 										
 								<label for="login">Login* :</label>
 								<?php echo form_input("login");?>
@@ -35,9 +35,9 @@
 									  echo form_error('mdp','<span class="error">','</span>');
 																						
 									  echo form_submit("LOGIN", "Valider");
-									  echo form_submit("LOGIN", "Annuler");
-							
-							      echo form_close();?>
+									  echo form_submit("LOGIN", "Annuler");?>
+
+							 <?php echo form_close();?>
 													
 						</fieldset>
 						
