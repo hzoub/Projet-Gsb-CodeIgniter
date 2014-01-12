@@ -1,6 +1,5 @@
 <!-- menu -->
 
-
 <div id="nav">
 <ul>
 <li><a href="#" title="Comptes - Rendus"><span> Comptes - Rendus </span></a>

@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://127.0.0.1/GSBCodeIgniter/GBSCodeIgniter/';
+$config['base_url']	= 'http://127.0.0.1/Projet-GSB-CodeIgniter/GBSCodeIgniter/';
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -68,7 +68,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language']	= 'french';
 
 /*
 |--------------------------------------------------------------------------

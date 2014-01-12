@@ -24,10 +24,11 @@ class Connexion_c extends CI_Controller {
 	}
 	public function index()
 	{
-		/*Vérification des champs s'ils sont valide. xss_clean -> pour eviter les injéctions sql*/
+		
+		/*Vérification des champs s'ils sont valides. xss_clean -> pour eviter les injéctions sql*/
 		 $this->form_validation->set_rules('pseudo','pseudo','trim|required|xss_clean');
     	 $this->form_validation->set_rules('pass','mot de passe','trim|required|xss_clean');
- 
+   
 		$this->load->view('accueil_v');	
 	}
 	
