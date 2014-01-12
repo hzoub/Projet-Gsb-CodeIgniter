@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class connexion_c extends CI_Controller {
+class Connexion_c extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -23,6 +23,9 @@ class connexion_c extends CI_Controller {
 	}
 	public function index()
 	{
+		$this->form_validation->set_rules('login','login','trim|required|xss_clean');
+		$this->form_validation->set_rules('mdp','mot de passe','trim|required|xss_clean');
+		
 		$this->load->view('accueil_v');	
 	}
 	
