@@ -1,0 +1,380 @@
+/* ---------------------------------------------------------------------------
+	Styles des divisions principales de la page
+--------------------------------------------------------------------------- */
+body{
+	background-color: #275682;
+	background-image: url(imgs/FONDGLOBAL.jpg);
+	background-repeat: repeat-x;
+	margin:0% 0%;
+	padding : 0.6em;
+	font-family:"Trebuchet MS",Verdana,Geneva,Arial,Helvetica,sans-serif;
+	font-size:0.8em;
+}
+b {
+	color: #275682;
+}
+
+#page {
+	background-color:white;
+	width : 65%;
+	margin : auto ;
+	border : 0.2em solid black;
+	padding : 0.1em;
+}
+#entete{
+	background-color:#275682;
+	color : #275682;
+	border: solid 0.1em #275682;
+	height: 154px;
+	padding: 5px;
+	border-collapse: separate;
+}
+#menuGauche {
+	margin-top : 0.8em;
+	padding: 1em;
+	background-color: #fff;
+	color: rgb(0,85,227);
+	float: left;
+	width: 14%;
+}
+#pied{
+	clear : both;
+	border : solid 0.2em #275682;
+	margin-left : 18%;
+	margin-top : 1em;
+	padding:0.4em;
+	padding: 0.2em;
+	border-collapse: separate;
+}
+
+/* ---------------------------------------------------------------------------
+	Contenu
+--------------------------------------------------------------------------- */
+#contenu{
+	border: none;
+	padding: 1.3em;
+	background-color: #fff;
+	border-left :  groove 0.8em #275682;
+	margin-top : 1.2em;
+	margin-left: 18%;
+	/* permet de fixer une hauteur mini sur les navigateurs modernes */
+	min-height:27em;
+	/* pour obtenir le même effet sur IE, sachant que si le contenu dépasse, il
+	"poussera" la hauteur en ne respectant pas la norme. On se joue de ses lacunes
+	*/
+	height:27em;
+}
+
+#contenu pre {
+  width:95%;
+  overflow : scroll;
+}
+
+#contenu h2 {
+	font-family:"Trebuchet MS", sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	text-align : center;
+	color: #275682;
+	text-decoration: none;
+	border : 2px solid #275682;
+	background-color: #fff;
+	height : 30px;
+	padding-top:10px;/* marge intérieure du haut */
+}
+/* Style pour les liens de la page principale */
+#contenu .corpsTexte {
+  width:80%;
+  font-size:1.2em;
+}
+
+/* Style pour les liens de la page principale */
+#contenu a {
+   font-size : 1.1em;
+   color:gray;
+   text-decoration:none;
+}
+#contenu a:hover {
+   text-decoration:none;
+   background-color : #D9BB7A;
+   font-size : 1em;
+}
+
+/* Style pour les parties importantes de la page principale */
+#contenu strong {
+  font-weight:bold;
+}
+
+/* Styles pour les tableaux de la page principale */
+#contenu table {
+   background-color:#FFF;
+   border : 0.1em solid #777777;
+   color:black;
+   margin-right : auto ;
+   margin-left:0.3em;
+   border-collapse : collapse;
+}
+
+/* Style pour les lignes d'en-tête des tableaux */
+#contenu th {  
+   background-color:#275682;
+   height:21px;
+   text-align:left;
+   vertical-align:top;
+   font-weight:bold;
+   border-bottom:0.1em solid #777777;
+   font-size:1.1em;
+} 
+
+#contenu td {
+   border :1px solid #777777;
+}
+
+#contenu h3 {
+    font-size : 1.2em;
+}
+
+#contenu img {
+  height : 28px;
+  float : left;
+
+}
+/* pour rétablir le mauvais effet sur les nav. modernes */
+html>body #contenu{
+	height:auto;
+}
+
+/* ---------------------------------------------------------------------------
+	Menu
+--------------------------------------------------------------------------- */
+#nav ul {
+	list-style:none;
+	margin:20px;
+	padding:0;
+	width:500px;
+
+}
+
+#nav ul li a span:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: -webkit-radial-gradient(1em 50%, circle, white .30em, rgba(255,255,255,0) .4em);
+}
+#nav ul li {
+
+	padding:5px;
+	overflow:hidden;
+	height:35px;
+}
+#nav ul li a{	
+	color:#fff;
+	text-decoration:none;
+	font-weight:bold;
+	padding:6px 10px 6px 25px;
+	margin:5px 10px 5px 0;
+	float:left;
+	position:relative;
+	background:#275682;
+	border:1px solid #275682; 
+	border-left:none;
+	border-bottom-right-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+#nav ul li a:before  {  
+	content: ' ';  
+	position: absolute;  
+	width: 0;  
+	height: 0;  
+	left: -18px;  
+	top: -7px;  
+	border: 17px solid;  
+	border-color: #fff transparent transparent transparent;  
+}  
+#nav ul li a:after   {  
+	content: ' ';  
+	position: absolute;  
+	width: 0;  
+	height: 0;  
+	left: -18px;  
+	bottom: -7px;  
+	border: 17px solid;  
+	border-color: transparent transparent #fff transparent;  
+}  
+
+#nav ul li a:hover{
+	color:#d8ebff;
+	text-shadow:0px 1px 1px #42aaf4;
+	border:1px solid #42aaf4;
+	background:#94c9fd;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#94c9fd), color-stop(100%,#50a3fc));
+}
+#nav ul li a:active{
+	margin:6px 10px 5px 0;
+	box-shadow: 1px 1px 2px #d9d7da;
+	color:#fff;
+}
+
+
+/*-------------------------------
+	Page principale
+-----------------------------*/
+#pagePrincipale{
+	border: none;
+	padding: 1.3em;
+	background-color: #fff;
+	border-left :  groove 0.8em #275682;
+	margin-top : 1.2em;
+	margin-left: 18%;
+	/* permet de fixer une hauteur mini sur les navigateurs modernes */
+	min-height:27em;
+	/* pour obtenir le même effet sur IE, sachant que si le contenu dépasse, il
+	"poussera" la hauteur en ne respectant pas la norme. On se joue de ses lacunes
+	*/
+	
+}
+
+#pagePrincipale h2 {
+	font-family:"Trebuchet MS", sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	text-align : center;
+	color: #275682;
+	text-decoration: none;
+	border : 2px solid #275682;
+	background-color: #fff;
+	height : 30px;
+	padding-top:10px;/* marge intérieure du haut */
+}
+
+#pagePrincipale a {
+	text-decoration:none;
+}
+
+
+#entete #logoGSB {
+  float : left;
+  width : 238px;
+  height : 152px;
+}
+
+#entete h1 {
+	margin : 15px;
+	text-align:center;
+	color: #fff; 
+	padding: 40px;
+}
+
+.logoValidW3c {
+  display: inline;
+}
+#libValidW3c{
+  display : inline;
+  vertical-align:middle;
+}
+
+/* ---------------------------------------------------------------------------
+	Formulaire de connexion
+--------------------------------------------------------------------------- */
+#formulaire {
+	width: 100%; 
+	margin: 50px auto; 
+	padding:0 0 30px 0;
+	/* couleur de fond */
+	background: #fff;
+}
+
+#formulaire fieldset {
+	margin: 0; 
+	padding: 0; 
+	border: 0; 
+	outline: none;
+}
+
+#formulaire h1 {
+	/* styles de caractères */
+	font-size: 20px; 
+	font-weight:200;
+	color: #40427f; 
+	text-align: center; 
+	/* marges et bordures */
+	padding:20px;
+	margin: 0 0 30px 0;
+	border-bottom:1px solid #777879;
+	/* couleur de fond */
+	background: #fff;
+}
+
+#formulaire label {
+	/* positionnement marge et taille */
+	float: left; 
+	clear: left; 
+	margin: 10px 20px 0 0; 
+	width: 200px;
+	/* styles de caractères */
+	font-size: 14px; 
+	color: #445668;
+	text-shadow: 0px 1px 0px #f2f2f2;
+	text-align: right; 
+}
+
+#formulaire input {
+	/* styles de caractères */
+	font-size: 12px; 
+	color: #4b4b4b; 
+	text-shadow: 1px 1px 0px #e8eade;
+	/* marge taille  */
+	width: 250px; 
+	height: 30px; 
+	padding: 5px 10px 0px 10px; 
+	margin: 0 0 20px 0;
+	/* couleur de fond */
+	background: #f1f2f4;
+	/* bordures */
+	border:1px solid #b6b7b9;
+}
+	
+#formulaire textarea {
+	/* styles de caractères */
+	font-size: 14px; 
+	color: #4b4b4b; 
+	text-shadow: 1px 1px 0px #e8eade;
+	font-family:Sans-serif;
+	/* marge taille et ombre portée */
+	width: 270px; 
+	height: 80px; 
+	padding: 10px 10px 0px 10px; 
+	margin: 0 0 20px 0;
+	/* couleur de fond */
+	background: #f1f2f4;
+	/* bordures */
+	border:1px solid #b6b7b9;
+}
+	
+#formulaire input[type=submit] {
+	/* position taille marges */
+	float: right; 
+	cursor: pointer;
+	width: 160px;
+	height: 42px; 
+	padding: 5px 10px; 
+	margin: 0 120px 0 0;
+	/* coins arrondies */
+	border: 1px solid #275682;
+	border-radius: 50px;	
+	/* dégradé de fond */
+	background : #275682;
+	/* styles de texte */
+	color:#effaff;
+	text-shadow:1px -1px 0px #43708f;
+	font-weight:bold;
+}
+
+
+
+
+
