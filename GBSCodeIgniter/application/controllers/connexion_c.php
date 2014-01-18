@@ -29,8 +29,9 @@ class Connexion_c extends CI_Controller {
 		/* si non recharge la vue accueil_v*/
 		else{
 			
-			$data['titre'] = "Rapport de visite";//<h1>
-			$this->load->view('accueil_v',$data);
+			$data['content'] = 'accueil_v';//contenu de la page
+			$data['titre'] = "Rapport de visite";//titre de la page
+			$this->load->view('template_v',$data);
 			
 		}
 			
