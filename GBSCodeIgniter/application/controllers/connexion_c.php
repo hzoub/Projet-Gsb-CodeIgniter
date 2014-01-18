@@ -2,22 +2,8 @@
 
 class Connexion_c extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
 	public function __construct(){ 	
+		
 		parent::__construct();	
 		// Appel obligatoire au constructeur parent
 		//Chargement : base de donnÃ©e, model, helper
@@ -25,10 +11,35 @@ class Connexion_c extends CI_Controller {
 	}
 	public function index()
 	{
-		/*Vérification des champs s'ils sont valides. xss_clean -> pour eviter les injéctions sql*/
-		$this->form_validation->set_rules('pseudo','pseudo','trim|required|xss_clean');
-		$this->form_validation->set_rules('pass','mot de passe','trim|required|xss_clean');
-		$this->load->view('accueil_v');	
+		/*Vérification des champs s'ils sont valides. xss_clean -> pour sécuriser les injéctions sql*/
+		$this->form_validation->set_rules('login','login','trim|required|xss_clean');
+		$this->form_validation->set_rules('mdp','mot de passe','trim|required|xss_clean');
+		/**
+		 * Si les champs sont remplis il charge la vue menu_v ;)
+		 */
+		if($this->form_validation->run()){
+			
+			$data['content'] = 'menu_v';//contenu de la page
+			$data['titre'] = 'test';//titre de la page
+			/*
+			 * Charge la vue template_v qui prend comme contenu la vue 'menu_v' et titre 'test'
+			 */
+			$this->load->view('template_v',$data);
+		}
+		/* si non recharge la vue accueil_v*/
+		else{
+			
+			$data['titre'] = "Rapport de visite";//<h1>
+			$this->load->view('accueil_v',$data);
+			
+		}
+			
+	}
+	
+	function logout()
+	{
+		$this->session->sess_destroy();
+		redirect(site_url());
 	}
 
 }

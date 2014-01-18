@@ -12,7 +12,7 @@
 		<div id="page">
 			<div id="entete">
 				<img src="<?php echo base_url();?>images/logo.jpg" id="logoGSB" alt="Laboratoire Galaxy-Swiss Bourdin" title="Laboratoire Galaxy-Swiss Bourdin" />
-				<h1>Rapport de visite</h1>
+				<h1><?php if(isset($titre)) echo $titre; ?></h1>
 			</div>
 			
 			<div id="contenu">
@@ -26,12 +26,12 @@
 								<label for="login">Login* :</label>
 								<?php echo form_input("login");?>
 								<?php echo form_error('login','<span class="error">','</span>');?>
-																			
+															
 								<label for="mdp">Mot de passe* :</label>
-								<?php echo form_password("mdp");
-									  echo form_error('mdp','<span class="error">','</span>');
-																						
-									  echo form_submit("btnValider", "Valider");
+								<?php echo form_password("mdp");?>
+								<?php echo form_error('mdp','<span class="error">','</span>');?>
+																				
+								<?php echo form_submit("btnValider", "Valider");
 									  echo form_reset("btnAnnuler", "Annuler");
 							
 							 	echo form_close();

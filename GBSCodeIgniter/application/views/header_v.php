@@ -12,7 +12,7 @@
 		<div id="page">
 			<div id="entete">
 				<img src="<?php echo base_url();?>images/logo.jpg" id="logoGSB" alt="Laboratoire Galaxy-Swiss Bourdin" title="Laboratoire Galaxy-Swiss Bourdin" />
-				<h1>Rapport de visite</h1>
+				<h1><?php if(isset($titre)) echo $titre; ?></h1>
 			</div>
 			
 			<div id="contenu">
