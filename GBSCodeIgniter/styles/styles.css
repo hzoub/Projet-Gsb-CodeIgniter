@@ -374,6 +374,25 @@ html>body #contenu{
 	font-weight:bold;
 }
 
+#formulaire input[type=reset] {
+	/* position taille marges */
+	float: right; 
+	cursor: pointer;
+	width: 160px;
+	height: 42px; 
+	padding: 5px 10px; 
+	margin: 0 120px 0 0;
+	/* coins arrondies */
+	border: 1px solid #275682;
+	border-radius: 50px;	
+	/* dégradé de fond */
+	background : #275682;
+	/* styles de texte */
+	color:#effaff;
+	text-shadow:1px -1px 0px #43708f;
+	font-weight:bold;
+}
+
 
 
 
