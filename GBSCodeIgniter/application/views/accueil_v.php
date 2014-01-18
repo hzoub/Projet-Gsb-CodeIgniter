@@ -4,14 +4,14 @@
   <head>
     <title>Intranet du Laboratoire Galaxy-Swiss Bourdin</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<link href="./application/styles/styles.css" rel="stylesheet" type="text/css" />
+	<link href="<?php echo base_url();?>styles/styles.css" rel="stylesheet" type="text/css" />
     
-    <link rel="shortcut icon" type="image/x-icon" href="GSBCodeIgniter/application/images/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url();?>images/favicon.ico" />
   </head>
 	<body>
 		<div id="page">
 			<div id="entete">
-				<img src="./application/images/logo.jpg" id="logoGSB" alt="Laboratoire Galaxy-Swiss Bourdin" title="Laboratoire Galaxy-Swiss Bourdin" />
+				<img src="<?php echo base_url();?>images/logo.jpg" id="logoGSB" alt="Laboratoire Galaxy-Swiss Bourdin" title="Laboratoire Galaxy-Swiss Bourdin" />
 				<h1>Rapport de visite</h1>
 			</div>
 			
