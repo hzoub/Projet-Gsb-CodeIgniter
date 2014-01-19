@@ -394,8 +394,10 @@ html>body #contenu{
 }
 
 
-
+/*zoubert hanem*/
 .error{
 	color:red;
+	position:absolute;
+	margin-top: 10px;
 }
 
