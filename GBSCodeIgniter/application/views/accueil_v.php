@@ -1,6 +1,7 @@
 		<div id="formulaire">
 					<h1>Identification utilisateur</h1>
-						<fieldset>							
+						<fieldset>		
+						<!-- Equivalent <form method="post" action="connexion_c.php"> -->					
 							<?php echo form_open('connexion_c');?>		
 										
 								<label for="login">Login* :</label>
