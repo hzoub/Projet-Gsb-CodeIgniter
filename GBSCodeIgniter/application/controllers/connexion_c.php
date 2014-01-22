@@ -19,10 +19,11 @@ class Connexion_c extends CI_Controller {
 		 */
 		if($this->form_validation->run()){
 			
-			$data['content'] = 'menu_v';//contenu de la page
-			$data['titre'] = 'test';//titre de la page
+			$data['menu'] = 'menu_v';//menu
+			$data['content'] = 'espaceComptable_v';//contenu de la page
+			$data['titre'] = 'Espace comptable';//titre de la page
 			/*
-			 * Charge la vue template_v qui prend comme contenu la vue 'menu_v' et titre 'test'
+			 * Charge la vue template_v qui prend comme contenu la vue 'espaceComptable_v'
 			 */
 			$this->load->view('template_v',$data);
 		}
