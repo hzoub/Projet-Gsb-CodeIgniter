@@ -21,7 +21,7 @@ class Connexion_c extends CI_Controller {
 			
 			$data['menu'] = 'menu_v';//menu
 			$data['content'] = 'espaceComptable_v';//contenu de la page
-			$data['titre'] = 'Espace comptable';//titre de la page
+			$data['titre'] = 'Espace visiteur';//titre de la page
 			/*
 			 * Charge la vue template_v qui prend comme contenu la vue 'espaceComptable_v'
 			 */

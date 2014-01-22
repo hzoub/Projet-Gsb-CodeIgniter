@@ -12,9 +12,9 @@
 		<div id="page">
 			<div id="entete">
 				<img src="<?php echo base_url();?>images/logo.jpg" id="logoGSB" alt="Laboratoire Galaxy-Swiss Bourdin" title="Laboratoire Galaxy-Swiss Bourdin" />
-				<!-- Affiche le titre s'il a etait définit dans le controleur -->
+				<!-- Affiche le titre s'il a etait définis dans le controleur -->
 				<h1><?php if(isset($titre)) echo $titre; ?></h1>
 			</div>
-			<!-- Charge le menu s'il a etait définit dans le controleur -->
+			<!-- Charge le menu s'il a etait définis dans le controleur -->
 			<?php if(isset($menu)) $this->load->view($menu); ?>
 			<div id="contenu">
