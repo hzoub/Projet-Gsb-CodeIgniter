@@ -5,7 +5,7 @@
     <title>Intranet du Laboratoire Galaxy-Swiss Bourdin</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<link href="<?php echo base_url();?>styles/styles.css" rel="stylesheet" type="text/css" />
-    
+    <!-- base_url() = http://127.0.0.1/Projet-GSB-CodeIgniter/GBSCodeIgniter/ -->
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url();?>images/favicon.ico" />
   </head>
 	<body>

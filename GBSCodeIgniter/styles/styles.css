@@ -106,6 +106,7 @@ b {
    margin-right : auto ;
    margin-left:0.3em;
    border-collapse : collapse;
+   width: 100%;
 }
 
 /* Style pour les lignes d'en-tête des tableaux */
@@ -143,7 +144,7 @@ html>body #contenu{
 #nav ul {
 	list-style:none;
 	padding:0;
-	width:500px;
+	width:170px;
 	float: left;
 }
 
