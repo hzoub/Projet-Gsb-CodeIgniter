@@ -18,10 +18,10 @@ class Connexion_c extends CI_Controller {
 		 * Si les champs sont remplis il charge la vue menu_v ;)
 		 */
 		if($this->form_validation->run()){
-
+			
 			$data['menu'] = 'menu_v';//menu
 			$data['content'] = 'espaceVisiteur_v';//contenu de la page
-			$data['titre'] = 'Espace visiteur';//titre de la page
+			$data['titre'] = 'Gestion des comptes rendus';//titre de la page
 			/*
 			 * Charge la vue template_v qui prend comme contenu la vue 'espaceVisiteur_v'
 			 */
@@ -39,7 +39,15 @@ class Connexion_c extends CI_Controller {
 			
 	}
 	
-	function logout()
+	public function rapport()
+	{
+		$data['menu'] = 'menu_v';//menu
+		$data['content'] = 'rapportVisite_v';//contenu de la page
+		$data['titre'] = "Rapport de visite";//titre de la page
+		$this->load->view('template_v',$data);
+	}
+	
+	public function logout()
 	{
 		$this->session->sess_destroy();
 		redirect(site_url());

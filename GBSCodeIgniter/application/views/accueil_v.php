@@ -5,12 +5,14 @@
 							<?php echo form_open('connexion_c');?>		
 										
 								<label for="login">Login* :</label>
-								<?php echo form_input("login");
+								<?php
+									  echo form_input("login");
 									  echo form_error('login','<span class="error">','</span>');
 								?>
 															
 								<label for="mdp">Mot de passe* :</label>
-								<?php echo form_password("mdp");
+								<?php 
+									  echo form_password("mdp");
 									  echo form_error('mdp','<span class="error">','</span>');
 																				
 									  echo form_submit("btnValider", "Valider");

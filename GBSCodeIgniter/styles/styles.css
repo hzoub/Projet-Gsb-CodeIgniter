@@ -347,6 +347,7 @@ html>body #contenu{
 	/* bordures */
 	border:1px solid #b6b7b9;
 }
+
 	
 #formulaire input[type=submit] {
 	/* position taille marges */
@@ -386,6 +387,78 @@ html>body #contenu{
 	font-weight:bold;
 }
 
+/* ---------------------------------------------------------------------------
+	Formulaire rapport de visite
+--------------------------------------------------------------------------- */
+
+#formRapport label {
+	/* positionnement marge et taille */
+	float: left; 
+	clear: left; 
+	margin: 10px 20px 0 0; 
+	width: 200px;
+	/* styles de caractères */
+	font-size: 14px; 
+	color: #445668;
+	text-shadow: 0px 1px 0px #f2f2f2;
+	text-align: right; 
+}
+
+#formRapport input {
+	/* styles de caractères */
+	font-size: 12px; 
+	color: #4b4b4b; 
+	text-shadow: 1px 1px 0px #e8eade;
+	/* marge taille  */
+	width: 250px; 
+	height: 30px; 
+	padding: 5px 10px 0px 10px; 
+	margin: 0 0 20px 0;
+	/* couleur de fond */
+	background: #f1f2f4;
+	/* bordures */
+	border:1px solid #b6b7b9;
+}
+
+#formRapport select {
+	/* styles de caractères */
+	font-size: 12px; 
+	color: #4b4b4b; 
+	text-shadow: 1px 1px 0px #e8eade;
+	/* marge taille  */
+	width: 250px; 
+	height: 30px; 
+	padding: 5px 10px 0px 10px; 
+	margin: 0 0 20px 0;
+	/* couleur de fond */
+	background: #f1f2f4;
+	/* bordures */
+	border:1px solid #b6b7b9;
+}
+
+#formRapport textarea {
+	/* styles de caractères */
+	font-size: 14px; 
+	color: #4b4b4b; 
+	text-shadow: 1px 1px 0px #e8eade;
+	font-family:Sans-serif;
+	/* marge taille et ombre portée */
+	width: 270px; 
+	height: 80px; 
+	padding: 10px 10px 0px 10px; 
+	margin: 0 0 20px 0;
+	/* couleur de fond */
+	background: #f1f2f4;
+	/* bordures */
+	border:1px solid #b6b7b9;
+}
+
+#formRapport fieldset {
+	margin: 0; 
+	padding: 0; 
+	border: 0; 
+	outline: none;
+}
 
 /*zoubert hanem*/
 .error{
