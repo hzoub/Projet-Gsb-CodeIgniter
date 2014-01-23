@@ -41,6 +41,8 @@ class Connexion_c extends CI_Controller {
 	
 	public function rapport()
 	{
+		$data['results']=$this->user_model->lstPraticien();
+	
 		$data['menu'] = 'menu_v';//menu
 		$data['content'] = 'rapportVisite_v';//contenu de la page
 		$data['titre'] = "Rapport de visite";//titre de la page

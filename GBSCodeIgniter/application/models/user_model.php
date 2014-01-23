@@ -7,4 +7,22 @@ class User_model extends CI_Model {
 		parent::__construct();	
 		
 	}
+	
+	public function lstPraticien(){
+		
+		$query = $this->db->query('
+									SELECT PRA_NOM,PRA_PRENOM 
+									FROM praticien 
+									ORDER BY PRA_NOM
+								');
+		
+		foreach ($query->result() as $row){
+			
+			$data[] = $row;
+			
+		}
+		
+		return $data;
+	}
 }
+?>

@@ -10,7 +10,10 @@
 									
 		<label for="">Praticien :</label>
 		<?php
-			  echo form_dropdown('');
+			  foreach ($results as $recupLst){
+				$options [] = $recupLst->PRA_NOM." ".$recupLst->PRA_PRENOM;
+			  }
+			  echo form_dropdown('lstPraticien',$options);
 			  echo form_error('','<span class="error">','</span>'); 
 		?>
 													
