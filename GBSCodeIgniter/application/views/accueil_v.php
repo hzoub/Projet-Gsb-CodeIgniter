@@ -2,7 +2,7 @@
 					<h1>Identification utilisateur</h1>
 						<fieldset>		
 						<!-- Equivalent <form method="post" action="connexion_c.php"> -->					
-							<?php echo form_open('connexion_c');?>		
+							<?php echo form_open('connexion_c/login');?>		
 										
 								<label for="login">Login* :</label>
 								<?php
