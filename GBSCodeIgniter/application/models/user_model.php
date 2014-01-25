@@ -7,7 +7,9 @@ class User_model extends CI_Model {
 		parent::__construct();	
 		
 	}
-	
+	/*
+	*Récupere la nom et prenom des praticiens par ordre alphabétique
+	*/
 	public function lstPraticien(){
 		
 		$query = $this->db->query('
