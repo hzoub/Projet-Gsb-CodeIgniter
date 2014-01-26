@@ -3,10 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
   <head>
     <title>Intranet du Laboratoire Galaxy-Swiss Bourdin</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<link href="<?php echo base_url();?>application/styles/styles.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<link href="<?php echo base_url(); ?>application/styles/styles.css" rel="stylesheet" type="text/css"/>
+	<link href="<?php echo base_url(); ?>application/styles/datePicker/datePicker.css" rel="stylesheet" type="text/css"/>
     <!-- base_url() = http://127.0.0.1/Projet-GSB-CodeIgniter/GBSCodeIgniter/ -->
-    <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url();?>application/images/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url();?>application/images/favicon.ico"/>
   </head>
 	<body>
 		<div id="page">

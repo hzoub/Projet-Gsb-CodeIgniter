@@ -12,11 +12,11 @@ class User_model extends CI_Model {
 	*/
 	public function lstPraticien(){
 		
-		$query = $this->db->query('
-									SELECT PRA_NOM,PRA_PRENOM 
-									FROM praticien 
-									ORDER BY PRA_NOM
-								');
+		$query = $this->db->query("
+										SELECT PRA_NOM,PRA_PRENOM 
+										FROM praticien 
+										ORDER BY PRA_NOM
+								 ");
 		
 		foreach ($query->result() as $row){
 			
@@ -25,6 +25,28 @@ class User_model extends CI_Model {
 		}
 		
 		return $data;
+	}
+
+	/*
+	*Verifie le pseudo et le mot de passe
+	*@param $pseudo
+	*@param $pass
+	*/
+	function check_id($pseudo,$pass){
+
+		$query = $this->db->query("
+									  SELECT VIS_NOM,VIS_DATEEMBAUCHE
+									  FROM visiteur 
+									  WHERE VIS_NOM ='".$pseudo."'
+									  AND VIS_DATEEMBAUCHE ='".$pass."'
+								 ");
+
+		if($query->num_rows()>0){
+
+			return true;
+
+		}
+		
 	}
 }
 ?>

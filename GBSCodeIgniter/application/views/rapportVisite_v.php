@@ -10,6 +10,7 @@
 									
 		<label for="praticien">Praticien :</label>
 		<?php
+			  	$options [] = "";
 			  foreach ($results as $recupLst){
 				$options [] = $recupLst->PRA_NOM." ".$recupLst->PRA_PRENOM;
 			  }
@@ -20,7 +21,8 @@
 													
 		<label for="date">Date rapport :</label>
 		<?php 
-			  echo form_input('');
+				//<input type="text" name="date" value="" id="calendar">
+			  echo form_input('date','','id=calendar');
 			  echo form_error('','<span class="error">','</span>'); 
 		?>
 										

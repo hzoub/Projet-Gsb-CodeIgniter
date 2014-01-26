@@ -148,15 +148,6 @@ html>body #contenu{
 	float: left;
 }
 
-#nav ul li a span:before {
-	content: '';
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: -webkit-radial-gradient(1em 50%, circle, white .30em, rgba(255,255,255,0) .4em);
-}
 #nav ul li {
 
 	padding:5px;
@@ -198,6 +189,16 @@ html>body #contenu{
 	border: 17px solid;  
 	border-color: transparent transparent #fff transparent;  
 }  
+
+#nav ul li a span:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: -webkit-radial-gradient(1em 50%, circle, white .30em, rgba(255,255,255,0) .4em);
+}
 
 #nav ul li a:hover{
 	color:#d8ebff;
@@ -460,10 +461,258 @@ html>body #contenu{
 	outline: none;
 }
 
-/*zoubert hanem*/
+/*Requiered*/
 .error{
-	color:red;
 	position:absolute;
 	margin-top: 10px;
+	border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    margin-left:15px;
+    width:250px;
+    box-shadow: 
+        0 1px 1px rgba(0,0,0,0.1), 
+        inset 0 1px 0 rgba(255,255,255,0.6); 
+    background: #FA565D;
+	background: -webkit-linear-gradient(#FA565D, #D1363D);
+	background: -moz-linear-gradient(#FA565D, #D1363D);
+}
+.error:before{  
+	content: ' ';  
+	position: absolute;  
+	width: 0;  
+	height: 0;  
+	left: -18px;  
+	top: -7px;  
+	border: 17px solid;  
+	border-color: #fff transparent transparent transparent;  
+}  
+.error:after{  
+	content: ' ';  
+	position: absolute;  
+	width: 0;  
+	height: 0;  
+	left: -18px;  
+	bottom: -7px;  
+	border: 17px solid;  
+	border-color: transparent transparent #fff transparent;  
+}
+
+.airZoub {
+	-webkit-animation-duration: 1s;
+	   -moz-animation-duration: 1s;
+	     -o-animation-duration: 1s;
+	        animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	   -moz-animation-fill-mode: both;
+	     -o-animation-fill-mode: both;
+	        animation-fill-mode: both;
+}
+
+.airZoub.hinge {
+	-webkit-animation-duration: 2s;
+	   -moz-animation-duration: 2s;
+	     -o-animation-duration: 2s;
+	        animation-duration: 2s;
+}
+
+@-webkit-keyframes bounceInRight {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateX(2000px);
+	}
+	
+	60% {
+		opacity: 1;
+		-webkit-transform: translateX(-30px);
+	}
+	
+	80% {
+		-webkit-transform: translateX(10px);
+	}
+	
+	100% {
+		-webkit-transform: translateX(0);
+	}
+}
+
+@-moz-keyframes bounceInRight {
+	0% {
+		opacity: 0;
+		-moz-transform: translateX(2000px);
+	}
+	
+	60% {
+		opacity: 1;
+		-moz-transform: translateX(-30px);
+	}
+	
+	80% {
+		-moz-transform: translateX(10px);
+	}
+	
+	100% {
+		-moz-transform: translateX(0);
+	}
+}
+
+@-o-keyframes bounceInRight {
+	0% {
+		opacity: 0;
+		-o-transform: translateX(2000px);
+	}
+	
+	60% {
+		opacity: 1;
+		-o-transform: translateX(-30px);
+	}
+	
+	80% {
+		-o-transform: translateX(10px);
+	}
+	
+	100% {
+		-o-transform: translateX(0);
+	}
+}
+
+@keyframes bounceInRight {
+	0% {
+		opacity: 0;
+		transform: translateX(2000px);
+	}
+	
+	60% {
+		opacity: 1;
+		transform: translateX(-30px);
+	}
+	
+	80% {
+		transform: translateX(10px);
+	}
+	
+	100% {
+		transform: translateX(0);
+	}
+}
+
+.bounceInRight {
+	-webkit-animation-name: bounceInRight;
+	-moz-animation-name: bounceInRight;
+	-o-animation-name: bounceInRight;
+	animation-name: bounceInRight;
+}
+
+
+/*Erreur d'authentification*/
+.errorLog {
+
+    width: 200px;
+    position:absolute;
+	margin-top: -150px;
+	margin-left: 230px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1), 
+        		inset 0 1px 0 rgba(255,255,255,0.6); 
+ 	
+    border: 1px solid red;
+	background: #FA565D;
+	background: -webkit-linear-gradient(#FA565D, #D1363D);
+	background: -moz-linear-gradient(#FA565D, #D1363D);
+} 
+
+@-webkit-keyframes bounceInDown {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(-2000px);
+	}
+	
+	60% {
+		opacity: 1;
+		-webkit-transform: translateY(30px);
+	}
+	
+	80% {
+		-webkit-transform: translateY(-10px);
+	}
+	
+	100% {
+		-webkit-transform: translateY(0);
+	}
+}
+
+@-moz-keyframes bounceInDown {
+	0% {
+		opacity: 0;
+		-moz-transform: translateY(-2000px);
+	}
+	
+	60% {
+		opacity: 1;
+		-moz-transform: translateY(30px);
+	}
+	
+	80% {
+		-moz-transform: translateY(-10px);
+	}
+	
+	100% {
+		-moz-transform: translateY(0);
+	}
+}
+
+@-o-keyframes bounceInDown {
+	0% {
+		opacity: 0;
+		-o-transform: translateY(-2000px);
+	}
+	
+	60% {
+		opacity: 1;
+		-o-transform: translateY(30px);
+	}
+	
+	80% {
+		-o-transform: translateY(-10px);
+	}
+	
+	100% {
+		-o-transform: translateY(0);
+	}
+}
+
+@keyframes bounceInDown {
+	0% {
+		opacity: 0;
+		transform: translateY(-2000px);
+	}
+	
+	60% {
+		opacity: 1;
+		transform: translateY(30px);
+	}
+	
+	80% {
+		transform: translateY(-10px);
+	}
+	
+	100% {
+		transform: translateY(0);
+	}
+}
+
+.bounceInDown {
+	-webkit-animation-name: bounceInDown;
+	-moz-animation-name: bounceInDown;
+	-o-animation-name: bounceInDown;
+	animation-name: bounceInDown;
+}
+
+
+#imgError{
+	 float: left;
+	 padding: 5px 5px;
 }
 
