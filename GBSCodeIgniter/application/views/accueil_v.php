@@ -2,7 +2,7 @@
 	<h1>Identification utilisateur</h1>
 		<fieldset>	
 		<?php if(isset($error)): ?>
-				<div class="errorLog airZoub bounceInDown">
+				<div class="errorLog animationError bounceIn">
 					<img src="<?php echo base_url(); ?>application/images/Error.png" id="imgError"><p><?php echo $error; ?></p>
 				</div>
 		<?php endif; ?>	
@@ -12,13 +12,13 @@
 				<label for="login">Login* :</label>
 				<?php
 					  echo form_input("login");
-					  echo form_error('login','<span class="error airZoub bounceInRight">','</span>');
+					  echo form_error('login','<span class="error animationError bounceIn">','</span>');
 				?>
 											
 				<label for="mdp">Mot de passe* :</label>
 				<?php 
 					  echo form_password("mdp");
-					  echo form_error('mdp','<span class="error airZoub bounceInRight">','</span>');
+					  echo form_error('mdp','<span class="error animationError bounceIn">','</span>');
 																
 					  echo form_submit("btnValider", "Valider");
 					  echo form_reset("btnAnnuler", "Annuler");

@@ -1,43 +1,67 @@
 <div id="formRapport">
 	<fieldset>
-		<?php echo form_open('connexion_c/ajoutRapport');?>		
+
+		<?php if(isset($error)): ?>
+				<div class="errorLog animationError bounceIn">
+					<img src="<?php echo base_url(); ?>application/images/Error.png" id="imgError"><p><?php echo $error; ?></p>
+				</div>
+		<?php endif; ?>
+
+
+		<?php echo form_open('connexion_c/addRapport');?>		
 			
 		<label for="numRapport">Num&eacute;ro rapport :</label>
 		<?php 
-			  echo form_input('');
-			  echo form_error('','<span class="error">','</span>'); 
+			  echo form_input('numRapport');
+			  echo form_error('numRapport','<span class="error animationError bounceIn">','</span>'); 
 		?>
-									
-		<label for="praticien">Praticien :</label>
-		<?php
-			  	$options [] = "";
-			  foreach ($results as $recupLst){
-				$options [] = $recupLst->PRA_NOM." ".$recupLst->PRA_PRENOM;
-			  }
-			  //<select name="lstPraticien"><option>$options</option></select>
-			  echo form_dropdown('lstPraticien',$options);
-			  echo form_error('','<span class="error">','</span>'); 
-		?>
-													
+								
+		<label for="lstPraticien">Praticien :</label>
+
+		  <select name="lstPraticien">
+		  		<option></option>
+		  <?php foreach($results as $recupLst){ ?>
+		  		<option value="<?php echo $recupLst->PRA_NUM; ?>">
+		  			<?php echo $recupLst->PRA_NOM." ".$recupLst->PRA_PRENOM;?>
+		  		</option>
+		  	<?php }?>
+		  </select>
+		  <?php
+		  echo form_error('lst','<span class="error animationError bounceIn">','</span>');
+		  echo form_submit('btnDetails','Details','id=btnDetails');
+		  ?>										
 		<label for="date">Date rapport :</label>
 		<?php 
 				//<input type="text" name="date" value="" id="calendar">
 			  echo form_input('date','','id=calendar');
-			  echo form_error('','<span class="error">','</span>'); 
+			  echo form_error('date','<span class="error animationError bounceIn">','</span>'); 
 		?>
 										
 		<label for="motif">Motif visite :</label>
 		<?php  
-			   echo form_input('');
-			   echo form_error('','<span class="error">','</span>'); 
+			   echo form_input('motif');
+			   echo form_error('motif','<span class="error animationError bounceIn">','</span>'); 
 		?>
 										
 		<label for="bilan">Bilan :</label>
 		<?php 
-			  echo form_textarea('');
-		  	  echo form_error('','<span class="error">','</span>'); 
-								
+			  echo form_textarea('bilan');
+		  	  echo form_error('bilan','<span class="error animationError bounceIn">','</span>'); 
+
+		  	  /*Boutton*/
+			  echo form_submit('','Valider');
+			  echo form_reset('','Annuler');	
+
 		  echo form_close();
 		?>	
 	</fieldset>	
-</div>				
+</div>	
+<script language="Javascript">
+function test(){
+	alert("tss");
+	document.getElementsByTagName(form).action = "connexion_c/detailsPraticien"
+    //document.test.target = "_blank";    // Open in a new window
+    document.getElementsByTagName(form).submit();
+    return true; 
+}
+</script>
