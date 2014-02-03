@@ -1,3 +1,6 @@
+/**
+*@author Zoubert Hanem
+*/
 $(document).ready(function(){
 
 	/*Calendrier*/
@@ -12,16 +15,19 @@ $(document).ready(function(){
  		$(".errorLog").addClass("animationError bounceOut");		
 
 	});
-	/*Dés qu'on click sur la liste déroulante "select" l'erreur disparait*/
+	/*Dés qu'on click sur la liste déroulante l'erreur disparait*/
 	$("select").focus(function(){
 
  		$(".error").addClass("animationError bounceOut");
 
 	});
 
-	//$("#btnDetails").click(function(){alert("test"); event.preventDefault();});
+	/*Affiche le msg success avec l'animation fadeIn() pendant 2s*/
+	$(".success").fadeIn("slow").delay(2000).fadeOut("slow");
+
 	
-	/*Dés qu'on click sur la liste deroulante "select" le boutton details apparait*/
+	
+	/*Dés qu'on click sur la liste deroulante le boutton details apparait*/
 	$("select").change(function(){
 
 		/*Récupere l'option qui a été selectionée dans la liste déroulante et le stocke dans la variable options*/
@@ -33,7 +39,7 @@ $(document).ready(function(){
 		}
 
 		else{
-			/*show le boutton details*/
+			/*Affiche le boutton details*/
 			$("#btnDetails").fadeIn("slow").show();
 		
 		}

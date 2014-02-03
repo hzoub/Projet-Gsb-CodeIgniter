@@ -93,7 +93,8 @@ class Connexion_c extends CI_Controller {
 	    }
 	    
 	    else{
-
+	    	
+	    	$data['success']='Bienvenue '.$this->session->userdata('login');
 			$data['menu'] = 'menu_v';//menu
 			$data['content'] = 'espaceVisiteur_v';//contenu de la page
 			$data['titre'] = 'Gestion des comptes rendus';//titre de la page
@@ -128,7 +129,7 @@ class Connexion_c extends CI_Controller {
 
 
 	/**
-	  *Ajoute le rapport dans la base de données ou affiche les details du praticien 
+	  *Ajoute le rapport de visite dans la base de données ou affiche les details du praticien 
 	  *@author zoubert hanem
 	*/
 	public function addRapport(){
@@ -136,7 +137,7 @@ class Connexion_c extends CI_Controller {
 		/*Si c'est le boutton details qui a été cliqué il charge la vue detailsPraticien_v*/
 		 if($this->input->post('btnDetails') == "Details") {
 
-		 	/*Recupére les infos de la fonction detailsPraticien() de la classe model user_model() */
+		 	/*Recupére les infos que renvoie la fonction detailsPraticien() du model user_model() */
 			 $data['results'] = $this->user_model->detailsPraticien($this->input->post('lstPraticien'));
 	    	 $data['menu'] = 'menu_v';//menu
 			 $data['content'] ="detailsPraticien_v";
@@ -154,36 +155,40 @@ class Connexion_c extends CI_Controller {
 			$this->form_validation->set_rules('bilan','bilan','trim|required|xss_clean');
 			
 			if($this->form_validation->run()){
-
 				/*Récupere les informations saisies dans le formulaire rapport de viste est les stockes dans la variable $recupInfos */
-				$recupInfos= array(
-									 'num'=>$this->input->post('numRapport'),
-									 'praticien'=>$this->input->post('lstPraticien'),
-	       							 'date'=>$this->input->post('date'),
-	        						 'motif'=>$this->input->post('motif'),
-	        						 'bilan'=>$this->input->post('bilan')
+				$recupInfos = array(
+									 'VIS_MATRICULE'=>$this->user_model->recupMatricule($this->session->userdata('login')),
+									 'RAP_NUM' =>$this->input->post('numRapport'),
+									 'PRA_NUM' =>$this->input->post('lstPraticien'),
+	       							 'RAP_DATE'=>$this->input->post('date'),
+	        						 'RAP_BILAN'=>$this->input->post('motif'),
+	        						 'RAP_MOTIF'=>$this->input->post('bilan')
 								  );
-				echo $this->input->post('numRapport')."<br>".
-					 $this->input->post('lstPraticien')."<br>".
-					 $this->input->post('date')."<br>".
-	        		 $this->input->post('motif')."<br>".
-	        		 $this->input->post('bilan');
+				
+	        	/*
+	        	 *on fait appel à la fonction addRapport du model user_model() qui va récuperer les infos et les ajouter à la bdd.
+	        	 *S'il fonction renvoie true recharge la vue espaceVisiteur_v et affiche un msg de success
+	        	*/
+	    		if($this->user_model->addRapport($recupInfos)){
 
-	        	
-	    		//$this->user_model->addRapport($recupInfos);
+		        	$data['success'] = 'Votre rapport a bien &eacute;t&eacute; ajout&eacute;.';
+		        	$data['menu'] = 'menu_v';//menu
+					$data['content'] = 'espaceVisiteur_v';//contenu de la page
+					$data['titre'] = 'Gestion des comptes rendus';//titre de la page
+					$this->load->view('template_v',$data);
 
-	        		
-				}
+	    		}
+	    		/**/
+	    		else{
 
-				else{
-
-					//$data['error'] ="l'ajout du rapport a echou&eacute;";
-					$data['results']=$this->user_model->lstPraticien();
+	        		$data['error'] = 'L\'ajout du rapport a &eacute;chou&eacute;';//msg d'erreur
+	    			$data['results']=$this->user_model->lstPraticien();//liste des praticens
 					$data['menu'] = 'menu_v';//menu
 					$data['content'] = 'rapportVisite_v';//contenu de la page
 					$data['titre'] = "Rapport de visite";//titre de la page
 					$this->load->view('template_v',$data);
-				}
+				}	
+			}
 		 }
 	  }
 	

@@ -8,7 +8,7 @@ class User_model extends CI_Model {
 		
 	}
 	/**
-	  *Récupere 'le num,le nom et prenom des praticiens par ordre alphabétique
+	  *Récupere le num , le nom et prenom des praticiens par ordre alphabétique
 	  *@author zoubert hanem
 	*/
 	public function lstPraticien(){
@@ -33,7 +33,7 @@ class User_model extends CI_Model {
 	  *@param $login
 	  *@param $pass
 	*/
-	function check_id($login,$pass){
+	public function check_id($login,$pass){
 
 		$query = $this->db->query("
 									  SELECT VIS_NOM,VIS_DATEEMBAUCHE
@@ -44,9 +44,40 @@ class User_model extends CI_Model {
 
 		if($query->num_rows()>0){
 
-			return true;
+			$bool = true;
 
 		}
+		else{
+
+			$bool = false;
+		}
+
+		return $bool;
+		
+	}
+
+	/**
+	  *Renvoie le matricule du visiteur
+	  *@param $nomVisiteur
+	*/
+	public function recupMatricule($nomVisiteur){
+
+		$query = $this->db->query("
+									  SELECT VIS_MATRICULE
+									  FROM visiteur 
+									  WHERE VIS_NOM ='".$nomVisiteur."'
+								 ");
+
+		foreach ($query->result() as $row){
+			
+			$data[] = $row;
+
+			foreach ($data as $recupMatricule){
+
+				$matricule = $recupMatricule->VIS_MATRICULE;
+			}
+		}
+		return $matricule;
 		
 	}
 
@@ -56,14 +87,28 @@ class User_model extends CI_Model {
 	  *@param $data
 	*/
 	public function addRapport($data){
-		//Requête sql
+
+		$this->db->insert('rapport_visite',$data);
+
+		if($this->db->affected_rows()>0){
+
+			$bool = true;
+
+		}
+
+		else{
+
+			$bool = false;
+
+		}
+		return $bool;
 	}
 
 
 	/**
-	  *Permet d'obtenir les informations complètes sur le praticien sélectionné 
+	  *Renvoie les informations complètes sur le praticien sélectionné 
 	  *@author zoubert hanem
-	  *@param $nom
+	  *@param $id
 	*/
 	public function detailsPraticien($id){
 		//Requête sql
