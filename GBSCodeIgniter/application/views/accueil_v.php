@@ -2,9 +2,23 @@
 	<h1>Identification utilisateur</h1>
 		<fieldset>	
 		<?php if(isset($error)): ?>
-				<div class="errorLog animationError bounceIn">
-					<img src="<?php echo base_url(); ?>application/images/Error.png" id="imgError"><p><?php echo $error; ?></p>
+					<div class="errorLog  animationError bounceIn">
+
+					<div class="left">
+
+						<div class="icone">
+							<img src="<?php echo base_url(); ?>application/images/Error.png">
+						</div>
+
+					</div>
+
+					<div class="right">
+
+						<p><?php echo $error; ?></p>
+
+					</div>
 				</div>
+				<!--</div>-->
 		<?php endif; ?>	
 		<!--<form method="post" action="connexion_c.php"> -->					
 			<?php echo form_open('connexion_c/login');?>		
