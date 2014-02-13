@@ -49,8 +49,8 @@
 		  	  echo form_error('bilan','<span class="error animationError bounceIn">','</span>'); 
 
 		  	  /*Boutton*/
-			  echo form_submit('','Valider');
-			  echo form_reset('','Annuler');	
+			  echo form_submit('valider','Valider');
+			  echo form_reset('annuler','Annuler');	
 
 		  echo form_close();
 		?>	
