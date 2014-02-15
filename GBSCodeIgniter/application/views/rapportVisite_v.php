@@ -56,12 +56,3 @@
 		?>	
 	</fieldset>	
 </div>	
-<script language="Javascript">
-function test(){
-	alert("tss");
-	document.getElementsByTagName(form).action = "connexion_c/detailsPraticien"
-    //document.test.target = "_blank";    // Open in a new window
-    document.getElementsByTagName(form).submit();
-    return true; 
-}
-</script>
