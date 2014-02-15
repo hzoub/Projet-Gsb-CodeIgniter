@@ -189,6 +189,19 @@ class Connexion_c extends CI_Controller {
 					$this->load->view('template_v',$data);
 				}	
 			}
+			/* 
+				*si non si les champs ne sont pas remplis
+				*recharge la vue rapportVisite_v et affiche un msg d'erreur géré par la fonction html5 requierd
+			*/
+			else{
+
+				$data['results']=$this->user_model->lstPraticien();
+				$data['menu'] = 'menu_v';//menu
+				$data['content'] = 'rapportVisite_v';//contenu de la page
+				$data['titre'] = "Rapport de visite";//titre de la page
+				$this->load->view('template_v',$data);
+
+			}
 		 }
 	  }
 	

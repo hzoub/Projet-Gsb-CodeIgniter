@@ -8,7 +8,8 @@ $(document).ready(function(){
 	$("#calendar").datepicker();
 
 
-	/*Dés qu'on click sur un champ l'erreur disparait*/
+		/*------------V1---------------------*/
+	
 	$("input").focus(function(){
 		/*Ajout de la class animationError bounceOut*/
  		$(".error").addClass("animationError bounceOut");
@@ -21,6 +22,26 @@ $(document).ready(function(){
  		$(".error").addClass("animationError bounceOut");
 
 	});
+	/*------------V1---------------------*/
+/******************************************/
+	/*var log = $("#login");
+	var mdp = $("#mdp");
+
+	log.keyup(function(){
+
+		if(!$("#login").val()==""){
+
+			$(".error").first().addClass("animationError bounceOut");
+
+		}
+
+	});
+
+	mdp.keyup(function(){
+		$(".error").addClass("animationError bounceOut");
+	});*/
+/******************************************/
+
 
 	/*Affiche le msg success avec l'animation fadeIn() pendant 2s*/
 	$(".success").fadeIn("slow").delay(2000).fadeOut("slow");

@@ -25,13 +25,13 @@
 						
 				<label for="login">Login* :</label>
 				<?php
-					  echo form_input("login");
+					  echo form_input("login","","id=login");
 					  echo form_error('login','<span class="error animationError bounceIn">','</span>');
 				?>
 											
 				<label for="mdp">Mot de passe* :</label>
 				<?php 
-					  echo form_password("mdp");
+					  echo form_password("mdp","","id=mdp");
 					  echo form_error('mdp','<span class="error animationError bounceIn">','</span>');
 																
 					  echo form_submit("btnValider", "Valider");
