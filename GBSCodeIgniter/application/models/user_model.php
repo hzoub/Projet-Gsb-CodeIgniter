@@ -10,6 +10,7 @@ class User_model extends CI_Model {
 	/**
 	  *Récupere le num , le nom et prenom des praticiens par ordre alphabétique
 	  *@author zoubert hanem
+	  *@return $data
 	*/
 	public function lstPraticien(){
 		
@@ -32,6 +33,7 @@ class User_model extends CI_Model {
 	  *Vérifie le login et le mot de passe saisie
 	  *@param $login
 	  *@param $pass
+	  *@return $bool
 	*/
 	public function check_id($login,$pass){
 
@@ -59,6 +61,7 @@ class User_model extends CI_Model {
 	/**
 	  *Renvoie le matricule du visiteur
 	  *@param $nomVisiteur
+	  *@return $matricule
 	*/
 	public function recupMatricule($nomVisiteur){
 
@@ -85,6 +88,7 @@ class User_model extends CI_Model {
 	  *Ajoute le rappport de visite dans la bdd
 	  *@author zoubert hanem
 	  *@param $data
+	  *@return $bool
 	*/
 	public function addRapport($data){
 
@@ -109,6 +113,7 @@ class User_model extends CI_Model {
 	  *Renvoie les informations complètes sur le praticien sélectionné 
 	  *@author zoubert hanem
 	  *@param $id
+	  *@return $data
 	*/
 	public function detailsPraticien($id){
 		//Requête sql
